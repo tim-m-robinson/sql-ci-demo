@@ -20,7 +20,6 @@ node {
                          args: '''--network="citools"
                                   --group-add ${DOCKER_GID}
                                   -v /var/run/docker.sock:/var/run/docker.sock
-                                  -e 'SQLPATH=/tmp/oratest'
                                   -e ORACLE_SID=HDWS 
                                   -e ORACLE_PDB=PDB1
                                   -e ORACLE_PWD=password
@@ -32,7 +31,8 @@ node {
 
       stage('Unit Test') {
         sh: 'ls'
-        sh: 'sqlplus hdws/hdws @test_db.sql'
+        env.TEST_STATUS = sh: 'cd test;sqlplus hdws/hdws @test_db.sql;$?'
+        echo ${TEST_STATUS}
       }
     }
 
