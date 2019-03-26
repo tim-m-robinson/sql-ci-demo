@@ -18,8 +18,10 @@ node {
 
     withDockerContainer(image: 'oracle/database:18.3.0-ee',
                          args: '''--network="citools"
-                                  -v /var/run/docker.sock:/var/run/docker.sock
                                   --group-add ${DOCKER_GID}
+                                  -v /var/run/docker.sock:/var/run/docker.sock
+                                  -v $(pwd)/:/tmp/oratest/ i
+                                  -e 'SQLPATH=/tmp/oratest'
                                   -e ORACLE_SID=HDWS 
                                   -e ORACLE_PDB=PDB1
                                   -e ORACLE_PWD=password
@@ -30,7 +32,7 @@ node {
       }
 
       stage('Unit Test') {
-        echo 'c'
+        sqlplus hdws/hdws @test_db.sql
       }
     }
 
