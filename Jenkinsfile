@@ -20,7 +20,7 @@ node {
                          args: '''--network="citools"
                                   --group-add ${DOCKER_GID}
                                   -v /var/run/docker.sock:/var/run/docker.sock
-                                  -v $(pwd)/:/tmp/oratest/ i
+                                  -v $(pwd)/:/tmp/oratest/
                                   -e 'SQLPATH=/tmp/oratest'
                                   -e ORACLE_SID=HDWS 
                                   -e ORACLE_PDB=PDB1
