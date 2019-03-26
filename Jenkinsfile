@@ -4,15 +4,15 @@ node {
         checkout scm
     }
     stage('Create Test DB') {
-        echo a
+        echo 'a'
     }
     stage('Apply Changes') {
-        echo b
+        echo 'b'
     }
     stage('Unit Test') {
-        echo c
+        echo 'c'
     }
     stage('Package') {
-        echo d
+        echo 'd'
     }
 }
