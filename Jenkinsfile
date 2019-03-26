@@ -31,7 +31,10 @@ node {
 
       stage('Unit Test') {
         sh: 'ls'
-        env.TEST_STATUS = sh: 'cd test;sqlplus hdws/hdws @test_db.sql;$?'
+        env.TEST_STATUS = sh(
+          script: 'cd test;sqlplus hdws/hdws @test_db.sql;$?',
+          returnStdout: true
+        ).trim()
         echo ${TEST_STATUS}
       }
     }
