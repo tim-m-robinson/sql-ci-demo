@@ -35,7 +35,7 @@ node {
           script: 'cd test;sqlplus hdws/hdws @test_db.sql;echo $?',
           returnStdout: true
         ).trim()
-        echo ${TEST_STATUS}
+        echo "Test Status: ${TEST_STATUS}"
       }
     }
 
