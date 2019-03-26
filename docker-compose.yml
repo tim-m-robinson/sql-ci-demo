@@ -8,5 +8,6 @@ services:
       - '50000:50000'
     volumes:
       - '/oracle/jenkins-data:/var/jenkins_home'
+      - '/var/run/docker.sock:/var/run/docker.sock'
       - '/oracle/oradata-1:/tmp/oradata'
       - '/oracle/oradata-2:/tmp/oradata-ref'

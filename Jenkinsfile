@@ -16,7 +16,7 @@ node {
         sh: 'cp -R /tmp/oradata-ref/* /tmp/oradata/'
     }
 
-    withDockerContainere(image: 'oracle/database:18.3.0-ee',
+    withDockerContainer(image: 'oracle/database:18.3.0-ee',
                          args: '''--network="citools"
                                   -v /var/run/docker.sock:/var/run/docker.sock
                                   --group-add ${DOCKER_GID}
