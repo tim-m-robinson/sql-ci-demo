@@ -1,8 +1,0 @@
-CREATE OR REPLACE PROCEDURE TEST
-BEGIN
-  CURSOR c_emp IS
-   SELECT * FROM EMP WHERE emp_no = 1;
-  
-  OPEN c_emp;
-  dbms_output(c_emp%rowcount);
-END;
