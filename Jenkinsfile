@@ -4,7 +4,8 @@ node {
         checkout scm
     }
     stage('Create Test DB') {
-        echo 'a'
+        sh: 'rm -rf /tmp/oradata'
+        sh: 'cp -R /tmp/oradata-ref/* /tmp/oradata/
     }
     stage('Apply Changes') {
         echo 'b'
