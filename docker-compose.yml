@@ -1,7 +1,9 @@
 version: '2'
 services:
   jenkins:
-    image: 'jenkins/jenkins:lts'
+    image: 'jenkins_ci'
+    group_add:
+      - 993
     ports:
       - '80:8080'
       - '443:8443'

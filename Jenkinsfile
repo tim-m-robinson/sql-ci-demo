@@ -32,7 +32,7 @@ node {
       }
 
       stage('Unit Test') {
-        sqlplus hdws/hdws @test_db.sql
+        sh: 'sqlplus hdws/hdws @test_db.sql'
       }
     }
 
