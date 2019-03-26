@@ -1,0 +1,3 @@
+ALTER TABLE EMP ADD COLUMN (
+    job     VARCHAR2(9)
+);
